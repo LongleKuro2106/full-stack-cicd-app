@@ -1,0 +1,37 @@
+# fly.toml app configuration file generated for phonebookapplongle on 2023-10-18T19:45:37+03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "phonebookapplongle"
+primary_region = "arn"
+
+[build]
+
+[env]
+  PORT = "3000" # add this
+
+[processes]
+  app = "node index.js" # add this
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  # Add health check configuration
+  http_checks = [
+    { path = "/health", interval = 10, timeout = 5, grace = 30 }
+  ]
+
+# Set deployment strategy to canary
+[deploy]
+  strategy = "canary"
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

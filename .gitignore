@@ -1,7 +1,4 @@
-node_modules
-fly.toml
-Dockerfile
-.dockerignore
-build/
+node_modules/
+dist/
 .env
 run.rb
