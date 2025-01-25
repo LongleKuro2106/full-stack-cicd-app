@@ -32,6 +32,10 @@ app.get('/', (req, res) => {
   res.send('<h1>Hello World!</h1>')
 })
 
+app.get('/version', (req, res) => {
+  res.send('1') // change this string to ensure a new version deployed
+})
+
 app.get('/api/persons', (req, res, next) => {
   Person.find({})
     .then((persons) => {
