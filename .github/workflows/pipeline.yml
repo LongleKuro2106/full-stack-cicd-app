@@ -13,7 +13,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Install dependencies
+      - name: Install main dependencies
         run: npm install
+      - name: Install frontend dependencies
+        run: |
+          cd frontend
+          npm install
       - name: Check style
         run: npm run lint
