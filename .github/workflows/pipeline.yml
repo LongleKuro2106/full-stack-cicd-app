@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
 jobs:
   simple_deployment_pipeline:
@@ -29,6 +32,8 @@ jobs:
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:3001
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
 
   deploy:
     needs: [simple_deployment_pipeline]
