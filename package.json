@@ -10,7 +10,9 @@
     "deploy": "fly deploy",
     "deploy:full": "npm run build:ui && npm run deploy",
     "logs:prod": "fly logs",
-    "lint": "eslint './**/*.{js,jsx}'"
+    "lint": "eslint './**/*.{js,jsx}'",
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
   },
   "author": "Long Le",
   "license": "ISC",
@@ -23,6 +25,7 @@
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.4.10",
+    "cypress": "^12.0.0",
     "eslint": "^8.51.0",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
