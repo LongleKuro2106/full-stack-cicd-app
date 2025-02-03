@@ -146,3 +146,5 @@ app.get('/health', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
+// This final line is used to commit a pull request
+// for mluukkai to review the code and finsihing CI/CD part
