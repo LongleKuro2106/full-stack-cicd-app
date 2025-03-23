@@ -7,8 +7,8 @@ on:
       - main
 
   # Once tested, switch to a scheduled trigger
-  schedule:
-    - cron: "0 0 * * *" # This runs the check daily at midnight UTC
+  #schedule:
+    #- cron: "0 0 * * *" # This runs the check daily at midnight UTC
 
 jobs:
   health-check:
